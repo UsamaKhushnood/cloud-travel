@@ -4,7 +4,14 @@
     <SecondaryHeader />
     <v-main>
       <v-container>
-        <Nuxt />
+        <v-row>
+          <v-col cols="4">
+            <TheSidebar />
+          </v-col>
+          <v-col>
+            <Nuxt />
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
     <TheFooter />
@@ -15,9 +22,10 @@
 import TheHeader from '@/components/main/TheHeader.vue'
 import SecondaryHeader from '@/components/main/SecondaryHeader.vue'
 import TheFooter from '@/components/main/TheFooter.vue'
+import TheSidebar from '@/components/main/TheSidebar'
 export default {
   name: 'DefaultLayout',
-  components: { TheHeader, SecondaryHeader, TheFooter },
+  components: { TheHeader, SecondaryHeader, TheSidebar, TheFooter },
   data() {
     return {}
   },

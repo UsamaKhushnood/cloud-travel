@@ -8,13 +8,14 @@
             placeholder=""
             prepend-inner-icon="mdi-magnify"
             solo
+            hide-details
           ></v-text-field>
         </v-col>
         <v-col cols="3" class="pl-2">
-          <v-text-field label="Date Picker" solo></v-text-field
+          <v-text-field label="Date Picker" solo hide-details></v-text-field
         ></v-col>
         <v-col cols="3" class="pl-2">
-          <v-text-field label="Guest Dropdown" solo></v-text-field
+          <v-text-field label="Guest Dropdown" solo hide-details></v-text-field
         ></v-col>
         <v-col cols="2" class="pl-2">
           <v-btn color="secondary" block class="text-capitalize py-6 f-18" large
@@ -30,9 +31,6 @@
   background-color: #002d63;
   .v-input__slot {
     margin-bottom: 0;
-  }
-  .v-text-field__details {
-    display: none !important;
   }
 }
 </style>

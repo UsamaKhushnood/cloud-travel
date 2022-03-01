@@ -5,10 +5,8 @@ $body-font-family: 'Mulish', serif !important;
 .v-application {
   font-family: $font-family, sans-serif !important;
   letter-spacing: 0px !important;
-  font-weight: 600 !important;
   [class*='text-'] {
     font-family: $font-family, sans-serif !important;
     letter-spacing: 0px !important;
-    font-weight: 600 !important;
   }
 }
