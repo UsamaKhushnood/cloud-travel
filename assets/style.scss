@@ -1,0 +1,11 @@
+.v-btn--plain:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover)
+  .v-btn__content {
+  opacity: 1 !important;
+}
+
+.f-18 {
+  font-size: 18px !important;
+  div {
+    font-size: 18px !important;
+  }
+}
