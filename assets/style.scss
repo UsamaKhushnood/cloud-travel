@@ -9,6 +9,12 @@
     font-size: 18px !important;
   }
 }
+.f-14 {
+  font-size: 14px !important;
+  div {
+    font-size: 14px !important;
+  }
+}
 .f-12 {
   font-size: 12px !important;
   div {
@@ -22,4 +28,8 @@
 
 .position-relative {
   position: relative;
+}
+
+.pointer {
+  cursor: pointer;
 }

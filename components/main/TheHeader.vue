@@ -34,7 +34,7 @@
                 >
                   <v-btn
                     color="dark"
-                    class="font-weight-bold text-capitalize opacity-1"
+                    class="font-weight-bold text-capitalize opacity-1 listBtn"
                     plain
                     block
                     small
@@ -67,7 +67,7 @@
                 >
                   <v-btn
                     color="dark"
-                    class="font-weight-bold text-capitalize opacity-1"
+                    class="font-weight-bold text-capitalize opacity-1 listBtn"
                     plain
                     block
                     small
@@ -123,5 +123,9 @@ export default {
     min-height: 30px;
     padding: 0 5px;
   }
+}
+
+button.listBtn:hover {
+  background: #e2e2e29c;
 }
 </style>

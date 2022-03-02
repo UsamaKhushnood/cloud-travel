@@ -1,111 +1,101 @@
 <template>
   <div class="the-sidebar">
-    <v-card>
-      <v-card-text>
-        <div class="d-flex align-center justify-space-between">
-          <h4 class="text--primary fw-7">Price per night</h4>
-          <v-btn
-            color="primary"
-            class="opacity-1 font-weight-bold f-12"
-            plain
-            small
-            >clear</v-btn
-          >
-        </div>
-      </v-card-text>
-      <div class="px-4 pb-5 position-relative">
-        <v-range-slider
-          v-model="range"
-          :max="max"
-          :min="min"
-          track-color="#dddddd"
-          tick-size="15"
-          class="range-slider"
-          color="secondary"
-          hide-details
-        ></v-range-slider>
-        <div class="d-flex align-center mt-2">
-          <v-text-field
-            v-model="range[0]"
-            outlined
-            label="SGD"
-            hide-details
-            solo
-            dense
-            class="mr-4 rangeInput"
-            single-line
-            type="number"
-            @change="$set(range, 0, $event)"
-          ></v-text-field>
-          <span class="input-divider"></span>
-          <v-text-field
-            v-model="range[1]"
-            outlined
-            label="SGD"
-            hide-details
-            solo
-            dense
-            class="ml-4 rangeInput"
-            type="number"
-            single-line
-            @change="$set(range, 1, $event)"
-          ></v-text-field>
-        </div>
-      </div>
-    </v-card>
+    <PricePerNightFilter />
+    <SidebarFilters
+      filter-title="Review"
+      :filter-options="reviewsOptions"
+      clearable="true"
+      class="mt-2"
+    />
+    <StarRatingFilter class="mt-2" />
+    <HotelNameFilter class="mt-2" />
+    <SidebarFilters
+      filter-title="Reservation Policy"
+      :filter-options="ReservationPolicyOptions"
+      class="mt-2"
+    />
+    <SidebarFilters
+      filter-title="Meal plan"
+      :filter-options="MealPlanOptions"
+      collapsable="true"
+      class="mt-2"
+    />
+    <SidebarFilters
+      filter-title="Property type"
+      :filter-options="PropertyTypeOptions"
+      collapsable="true"
+      class="mt-2"
+    />
+    <SidebarFilters
+      filter-title="Facilities"
+      :filter-options="FacilitiesOptions"
+      collapsable="true"
+      class="mt-2"
+    />
   </div>
 </template>
 <script>
+import PricePerNightFilter from '@/components/filters/PricePerNightFilter'
+import SidebarFilters from '@/components/filters/SidebarFilters'
+import StarRatingFilter from '@/components/filters/StarRatingFilter'
+import HotelNameFilter from '@/components/filters/HotelNameFilter'
+
 export default {
+  components: {
+    PricePerNightFilter,
+    SidebarFilters,
+    StarRatingFilter,
+    HotelNameFilter,
+  },
   data() {
     return {
-      min: 0,
-      max: 1000,
-      range: [0, 550],
+      reviewsOptions: [
+        { quality: 'Excellent', count: 999 },
+        { quality: 'Very Good', count: 999 },
+        { quality: 'Good', count: 999 },
+        { quality: 'Fair', count: 999 },
+        { quality: 'Poor', count: 999 },
+        { quality: 'No review', count: 999 },
+      ],
+      ReservationPolicyOptions: [
+        { quality: 'Free cancellation', count: 999 },
+        { quality: 'Book now, pay later', count: 999 },
+        { quality: 'Pay at hotel', count: 999 },
+      ],
+      MealPlanOptions: [
+        { quality: 'Room only', count: 999 },
+        { quality: 'Breakfast', count: 999 },
+        { quality: 'Lunch', count: 999 },
+        { quality: 'Dinner', count: 999 },
+        { quality: 'Half board', count: 999 },
+        { quality: 'Full board', count: 999 },
+        { quality: 'All inclusive', count: 999 },
+      ],
+      PropertyTypeOptions: [
+        { quality: 'Hotel', count: 999 },
+        { quality: 'Hostel/Backpacker accomodation', count: 999 },
+        { quality: 'Apartment', count: 999 },
+        { quality: 'Aparthotel', count: 999 },
+        { quality: 'Resort', count: 999 },
+        { quality: 'Inn', count: 999 },
+        { quality: 'Motel', count: 999 },
+        { quality: 'Bed & breakfast', count: 999 },
+        { quality: 'Guesthouse', count: 999 },
+        { quality: 'Condo', count: 999 },
+        { quality: 'All-inclusive property', count: 999 },
+        { quality: 'Hostal', count: 999 },
+      ],
+      FacilitiesOptions: [
+        { quality: 'Swimming Pool', count: 999 },
+        { quality: 'Internet access', count: 999 },
+        { quality: 'Non-smoking floor', count: 999 },
+        { quality: 'Apartment', count: 999 },
+        { quality: 'Apartment', count: 999 },
+        { quality: 'Apartment', count: 999 },
+        { quality: 'Apartment', count: 999 },
+        { quality: 'Apartment', count: 999 },
+      ],
     }
   },
 }
 </script>
-<style lang="scss">
-.input-divider:after {
-  content: '';
-  width: 16px;
-  height: 1px;
-  background: #757575;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.range-slider {
-  .v-slider__track-container {
-    height: 8px;
-    border-radius: 5px !important;
-    overflow: hidden;
-  }
-  .v-slider__thumb.secondary {
-    width: 20px;
-    height: 20px;
-  }
-  .v-slider__thumb.secondary:before {
-    background-color: white !important;
-    width: 44px;
-    height: 44px;
-    opacity: 1;
-    transform: scale(0.3) !important;
-  }
-}
-
-.rangeInput {
-  .v-input__slot {
-    padding-left: 45px !important;
-  }
-  &:before {
-    content: 'SGD';
-    position: absolute;
-    z-index: 99;
-    top: 9px;
-    left: 6px;
-  }
-}
-</style>
