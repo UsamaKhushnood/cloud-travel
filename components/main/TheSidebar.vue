@@ -1,6 +1,9 @@
 <template>
   <div class="the-sidebar">
-    <PricePerNightFilter />
+    <div class="showMap d-flex justify-center">
+      <v-btn color="primary" class="text-capitalize" large>Show on map</v-btn>
+    </div>
+    <PricePerNightFilter class="mt-2" />
     <SidebarFilters
       filter-title="Review"
       :filter-options="reviewsOptions"
@@ -99,3 +102,11 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.showMap {
+  background-image: url('/images/map.png');
+  padding: 30px;
+  background-size: cover;
+  border-radius: 5px;
+}
+</style>

@@ -1,11 +1,11 @@
 <template>
-  <v-card>
+  <v-card elevation="0">
     <v-card-text>
       <div class="d-flex align-center justify-space-between">
         <h3 class="text--primary fw-7">Hotel Name</h3>
       </div>
     </v-card-text>
-    <div class="px-4 pb-3 mr-3 position-relative">
+    <div class="px-4 pb-5 mr-3 position-relative">
       <v-text-field
         v-model="hotelName"
         dense

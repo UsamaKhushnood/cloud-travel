@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card elevation="0">
     <v-card-text>
       <div class="d-flex align-center justify-space-between">
         <h3 class="text--primary fw-7">Star Rating</h3>
@@ -12,18 +12,13 @@
         >
       </div>
     </v-card-text>
-    <div class="px-4 pb-3 mr-3 position-relative">
+    <div class="px-4 pb-5 mr-3 position-relative">
       <div
         v-for="(option, index) in filterOptions"
         :key="index"
         class="d-flex justify-space-between align-center filter-checks"
       >
-        <v-checkbox
-          v-if="option.quality !== 0"
-          :label="option.quality"
-          class="mt-1"
-          hide-details
-        >
+        <v-checkbox v-if="option.quality !== 0" class="mt-1" hide-details>
           <template #label>
             <v-rating
               background-color="#fff"
@@ -37,7 +32,7 @@
             ></v-rating>
           </template>
         </v-checkbox>
-        <v-checkbox v-else :label="option.quality" class="mt-1" hide-details>
+        <v-checkbox v-else class="mt-1" hide-details>
           <template #label>
             <label class="v-label pointer">No review</label>
           </template></v-checkbox
@@ -68,7 +63,7 @@ export default {
   label.v-label {
     color: #000;
   }
-  button.v-icon.notranslate.v-icon--link.mdi.mdi-star.warning--text {
+  button.v-icon.notranslate.v-icon--link.mdi {
     padding: 0;
   }
 }

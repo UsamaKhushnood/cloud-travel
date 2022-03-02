@@ -5,7 +5,7 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col cols="4">
+          <v-col cols="4" xl="2" lg="4" md="4">
             <TheSidebar />
           </v-col>
           <v-col>

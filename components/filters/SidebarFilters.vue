@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card elevation="0">
     <v-card-text>
       <div class="d-flex align-center justify-space-between">
         <h3 class="text--primary fw-7">{{ filterTitle }}</h3>
@@ -13,7 +13,7 @@
         >
       </div>
     </v-card-text>
-    <div class="px-4 pb-3 mr-3 position-relative">
+    <div class="px-4 pb-5 mr-3 position-relative">
       <div v-if="collapsable" class="collapsable">
         <div
           v-for="(option, index) in visible"
@@ -84,8 +84,8 @@ export default {
     filterOptions: {
       type: Array,
     },
-    clearable: { type: Boolean, default: false },
-    collapsable: { type: Boolean, default: false },
+    clearable: { type: [Boolean, String], default: false },
+    collapsable: { type: [Boolean, String], default: false },
   },
   data() {
     return {

@@ -98,6 +98,8 @@ export default {
     return {
       selectedLanguage: 'English',
       selectedCurrency: 'USD',
+      attrs: null,
+      on: null,
     }
   },
   methods: {
@@ -119,6 +121,9 @@ export default {
 
 .language-menu,
 .currency-menu {
+  &.v-sheet {
+    padding: 4px 0 !important;
+  }
   .v-list-item {
     min-height: 30px;
     padding: 0 5px;

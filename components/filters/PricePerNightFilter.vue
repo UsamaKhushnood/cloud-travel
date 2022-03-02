@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card elevation="0">
     <v-card-text>
       <div class="d-flex align-center justify-space-between">
         <h3 class="text--primary fw-7">Price per night</h3>
